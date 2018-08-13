@@ -9,11 +9,11 @@ class Number
 
   def numbers_to_words
     number_word_values = {
-      1000000000000 => 'trillion',
-      1000000000 => 'billion',
-      1000000 => 'million',
-      1000 => 'thousand',
-      100 => 'hundred',
+      1000000000000 => ' trillion',
+      1000000000 => ' billion',
+      1000000 => ' million',
+      1000 => ' thousand',
+      100 => ' hundred',
       90 => 'ninety',
       80 => 'eighty',
       70 => 'seventy',
@@ -53,7 +53,7 @@ class Number
           if @number >= 100
             place_count = (@number/number).floor
             substring = Number.new(place_count).numbers_to_words()
-            number_string.concat(substring + ' ' + word)
+            number_string.concat(substring + word)
           else
             number_string.concat(word)
           end
