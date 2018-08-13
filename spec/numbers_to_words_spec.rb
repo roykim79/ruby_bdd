@@ -31,4 +31,29 @@ describe 'Number#numbers_to_words' do
     number = Number.new(4231)
     expect(number.numbers_to_words()).to eq("four thousand two hundred thirty one")
   end
+
+  it 'returns numbers >= 10000 in word form' do
+    number = Number.new(14231)
+    expect(number.numbers_to_words()).to eq("fourteen thousand two hundred thirty one")
+  end
+
+  it 'returns numbers >= 100000 in word form' do
+    number = Number.new(214231)
+    expect(number.numbers_to_words()).to eq("two hundred fourteen thousand two hundred thirty one")
+  end
+
+  it 'returns numbers >= 1000000 in word form' do
+    number = Number.new(2214231)
+    expect(number.numbers_to_words()).to eq("two million two hundred fourteen thousand two hundred thirty one")
+  end
+
+  it 'returns numbers >= 1000000 in word form' do
+    number = Number.new(21002214231)
+    expect(number.numbers_to_words()).to eq("twenty one billion two million two hundred fourteen thousand two hundred thirty one")
+  end
+
+  it 'returns numbers >= 1000000000 in word form' do
+    number = Number.new(1021002214231)
+    expect(number.numbers_to_words()).to eq("one trillion twenty one billion two million two hundred fourteen thousand two hundred thirty one")
+  end
 end

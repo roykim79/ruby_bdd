@@ -37,6 +37,33 @@ class Number
     if @number == 0
       return 'zero'
     end
+    while (@number > 999999999999)
+      trillions_count = (@number/1000000000000)
+      trillions_string = Number.new(trillions_count).numbers_to_words()
+      number_string.concat(trillions_string + ' trillion')
+      @number -= (trillions_count * 1000000000000)
+      if @number > 0
+        number_string.concat(' ')
+      end
+    end
+    while (@number > 999999999)
+      billions_count = (@number/1000000000)
+      billions_string = Number.new(billions_count).numbers_to_words()
+      number_string.concat(billions_string + ' billion')
+      @number -= (billions_count * 1000000000)
+      if @number > 0
+        number_string.concat(' ')
+      end
+    end
+    while (@number > 999999)
+      millions_count = (@number/1000000)
+      millions_string = Number.new(millions_count).numbers_to_words()
+      number_string.concat(millions_string + ' million')
+      @number -= (millions_count * 1000000)
+      if @number > 0
+        number_string.concat(' ')
+      end
+    end
     while (@number > 999)
       thousands_count = (@number/1000)
       thousands_string = Number.new(thousands_count).numbers_to_words()
