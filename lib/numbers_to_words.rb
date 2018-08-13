@@ -5,7 +5,6 @@ class Number
 
   def numbers_to_words
     number_word_values = {
-      100 => 'hundred',
       90 => 'ninety',
       80 => 'eighty',
       70 => 'seventy',
@@ -37,6 +36,24 @@ class Number
     number_string = ''
     if @number == 0
       return 'zero'
+    end
+    while (@number > 999)
+      thousands_count = (@number/1000)
+      thousands_string = Number.new(thousands_count).numbers_to_words()
+      number_string.concat(thousands_string + ' thousand')
+      @number -= (thousands_count * 1000)
+      if @number > 0
+        number_string.concat(' ')
+      end
+    end
+    while (@number > 99)
+      hundreds_count = (@number/100)
+      hundreds_string = Number.new(hundreds_count).numbers_to_words()
+      number_string.concat(hundreds_string + ' hundred')
+      @number -= (hundreds_count * 100)
+      if @number > 0
+        number_string.concat(' ')
+      end
     end
     while (@number > 0)
       number_word_values.each do |number, word|

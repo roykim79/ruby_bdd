@@ -13,12 +13,22 @@ describe 'Number#numbers_to_words' do
   end
 
   it 'returns a number between 19 and 100 in word form' do
-    number = Number.new(21)
-    expect(number.numbers_to_words()).to eq("twenty one")
+    number = Number.new(31)
+    expect(number.numbers_to_words()).to eq("thirty one")
   end
 
   it 'returns "zero" if the input is 0' do
     number = Number.new(0)
     expect(number.numbers_to_words()).to eq("zero")
+  end
+
+  it 'returns numbers >= 100 in word form' do
+    number = Number.new(231)
+    expect(number.numbers_to_words()).to eq("two hundred thirty one")
+  end
+
+  it 'returns numbers >= 1000 in word form' do
+    number = Number.new(4231)
+    expect(number.numbers_to_words()).to eq("four thousand two hundred thirty one")
   end
 end
