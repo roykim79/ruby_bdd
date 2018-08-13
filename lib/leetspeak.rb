@@ -1,6 +1,6 @@
 class String
   def leetspeak
-    split_string = self.split('')
+    split_string = split('')
     new_array = []
     split_string.each_with_index do |char, index|
       if char.eql?('e')
