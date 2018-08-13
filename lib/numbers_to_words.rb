@@ -5,6 +5,11 @@ class Number
 
   def numbers_to_words
     number_word_values = {
+      1000000000000 => 'trillion',
+      1000000000 => 'billion',
+      1000000 => 'million',
+      1000 => 'thousand',
+      100 => 'hundred',
       90 => 'ninety',
       80 => 'eighty',
       70 => 'seventy',
@@ -37,56 +42,18 @@ class Number
     if @number == 0
       return 'zero'
     end
-    while (@number > 999999999999)
-      trillions_count = (@number/1000000000000)
-      trillions_string = Number.new(trillions_count).numbers_to_words()
-      number_string.concat(trillions_string + ' trillion')
-      @number -= (trillions_count * 1000000000000)
-      if @number > 0
-        number_string.concat(' ')
-      end
-    end
-    while (@number > 999999999)
-      billions_count = (@number/1000000000)
-      billions_string = Number.new(billions_count).numbers_to_words()
-      number_string.concat(billions_string + ' billion')
-      @number -= (billions_count * 1000000000)
-      if @number > 0
-        number_string.concat(' ')
-      end
-    end
-    while (@number > 999999)
-      millions_count = (@number/1000000)
-      millions_string = Number.new(millions_count).numbers_to_words()
-      number_string.concat(millions_string + ' million')
-      @number -= (millions_count * 1000000)
-      if @number > 0
-        number_string.concat(' ')
-      end
-    end
-    while (@number > 999)
-      thousands_count = (@number/1000)
-      thousands_string = Number.new(thousands_count).numbers_to_words()
-      number_string.concat(thousands_string + ' thousand')
-      @number -= (thousands_count * 1000)
-      if @number > 0
-        number_string.concat(' ')
-      end
-    end
-    while (@number > 99)
-      hundreds_count = (@number/100)
-      hundreds_string = Number.new(hundreds_count).numbers_to_words()
-      number_string.concat(hundreds_string + ' hundred')
-      @number -= (hundreds_count * 100)
-      if @number > 0
-        number_string.concat(' ')
-      end
-    end
     while (@number > 0)
       number_word_values.each do |number, word|
         if @number >= number
-          number_string.concat(word)
-          @number -= number
+          place_count = 1
+          if @number >= 100
+            place_count = (@number/number).floor
+            substring = Number.new(place_count).numbers_to_words()
+            number_string.concat(substring + ' ' + word)
+          else
+            number_string.concat(word)
+          end
+          @number -= (place_count * number)
           if @number > 0
             number_string.concat(' ')
           end
