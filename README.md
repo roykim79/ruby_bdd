@@ -1,11 +1,13 @@
-# ruby_bdd
-Behavior-Driven Development exercises with Ruby
+# Behavior-Driven Development exercises with Ruby
 
-## Methods
-pingpong,
-title_case,
-leetspeak,
-queen_attack,
-clock_angle,
-scrabble_score,
-numbers-to-words
+## Methods created
+* Fixnum#pingpong,
+* String#title_case,
+* String#leetspeak,
+* Array#queen_attack,
+* String#clock_angle,
+* Word#scrabble_score
+* Number#numbers-to-words
+
+## Classes created
+Cat
