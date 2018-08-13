@@ -9,4 +9,8 @@ describe 'String#clock_angle' do
   it 'returns the angle between the hour hand and minute hand' do
     expect('6:00'.clock_angle).to eq(180)
   end
+
+  it 'returns the angle between the hour hand and minute hand' do
+    expect('1:00'.clock_angle).to eq(30)
+  end
 end

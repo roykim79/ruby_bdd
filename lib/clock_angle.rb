@@ -5,6 +5,10 @@ class String
     hour_position = (12 - hour_value)/12 * 360
     minute_position = (minute_value/60) * 360
 
-    hour_position - minute_position
+    if (hour_position - minute_position) > 180
+      return 360 - (hour_position - minute_position)
+    else
+      hour_position - minute_position
+    end
   end
 end
