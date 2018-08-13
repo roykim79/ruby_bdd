@@ -1,6 +1,13 @@
 require 'rspec'
 require 'numbers_to_words'
 
+describe 'Number#get_number' do
+  it 'returns the value of the number' do
+    number = Number.new(21)
+    expect(number.get_number).to eq(21)
+  end
+end
+
 describe 'Number#numbers_to_words' do
   it 'returns a single digit number in word form' do
     number = Number.new(1)

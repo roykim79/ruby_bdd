@@ -2,4 +2,10 @@
 Behavior-Driven Development exercises with Ruby
 
 ## Methods
-Ping-Pong, Title Case, Leetspeak, Queen Attack, Clock Angle
+pingpong,
+title_case,
+leetspeak,
+queen_attack,
+clock_angle,
+scrabble_score,
+numbers-to-words

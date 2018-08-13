@@ -3,6 +3,10 @@ class Number
     @number = number
   end
 
+  def get_number
+    @number
+  end
+
   def numbers_to_words
     number_word_values = {
       1000000000000 => 'trillion',
