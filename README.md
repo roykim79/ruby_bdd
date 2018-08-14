@@ -11,3 +11,7 @@
 
 ## Classes created
 Cat
+
+## Rock Paper Scissors
+To play, run `ruby lib/rock_paper_scissors.rb`.
+When prompted, enter either 'rock', 'paper', or 'scissors'. I promise this will be seconds of fun!
