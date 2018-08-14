@@ -6,9 +6,8 @@ class Number
   end
 
   def prime_sifting
-    numbers = (2..@number)
     primes = *(2..@number)
-    numbers.each do |prime|
+    (2..@number).each do |prime|
       multiplier = 2
       while (prime * multiplier) <= @number
         primes.delete(prime * multiplier)
