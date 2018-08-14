@@ -16,10 +16,4 @@ describe 'Number#prime_sifting' do
     number = Number.new(10)
     expect(number.prime_sifting()).to eq([2, 3, 5, 7])
   end
-
-
-  it 'returns a list containing the numbers 2, 3, 5, and 7 when the user inputs 10' do
-    number = Number.new(30)
-    expect(number.prime_sifting()).to eq([2, 3, 5, 7])
-  end
 end
