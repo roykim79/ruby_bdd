@@ -2,7 +2,7 @@
 
 class Sequence
   def initialize(sequence)
-    @sequence = sequence
+    @sequence = sequence.to_s
   end
 
   def is_palindrome?
