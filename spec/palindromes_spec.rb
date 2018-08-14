@@ -16,4 +16,9 @@ describe 'Sequence#is_palindrome?' do
     sequence = Sequence.new(1221)
     expect(sequence.is_palindrome?()).to eq(true)
   end
+
+  it 'returns true if a string of words is a palindrome' do
+    sequence = Sequence.new("hello olleh hello olleh")
+    expect(sequence.is_palindrome?()).to eq(true)
+  end
 end
