@@ -6,12 +6,7 @@ class Text
   end
 
   def find_and_replace(string1, string2)
-    split_text = @text.split(string1)
-    if split_text.length == 0
-      string2
-    else
-      split_text.join(string2)
-    end
+    @text.gsub(string1, string2)
   end
 
 end
