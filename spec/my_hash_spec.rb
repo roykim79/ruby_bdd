@@ -30,4 +30,18 @@ describe MyHash do
       expect(test_hash.has_key?('baz')).to eq(false)
     end
   end
+
+  describe '#has_value?' do
+    it 'returns true if the value is present in any key' do
+      test_hash = MyHash.new()
+      test_hash.myStore('foo', 'bar')
+      expect(test_hash.has_value?('bar')).to eq(true)
+    end
+
+    it 'returns false if the value is present in any key' do
+      test_hash = MyHash.new()
+      test_hash.myStore('foo', 'bar')
+      expect(test_hash.has_value?('baz')).to eq(false)
+    end
+  end
 end

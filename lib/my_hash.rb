@@ -14,4 +14,13 @@ class MyHash
   def has_key?(key)
     @attributes["#{key}"] != nil
   end
+
+  def has_value?(value)
+    @attributes.each do |key, val|
+      if value == val
+        return true
+      end
+    end
+    false
+  end
 end
