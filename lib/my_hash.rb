@@ -23,4 +23,12 @@ class MyHash
     end
     false
   end
+
+  def length
+    count = 0
+    @attributes.each do |key|
+      count += 1
+    end
+    count
+  end
 end
